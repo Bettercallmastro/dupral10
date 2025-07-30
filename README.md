@@ -1,6 +1,6 @@
 # Progetto Drupal + React
 
-Questo progetto combina Drupal come backend e React/Next.js come frontend.
+Questo progetto combina Drupal come backend e React/Next.js come frontend, implementando una duplice versione del layout come richiesto dalle specifiche del test.
 
 ## 🚀 Setup Iniziale
 
@@ -22,11 +22,20 @@ cd dupral
 # Avvia DDEV
 ddev start
 
-# Installa le dipendenze Composer
-ddev composer install
-
 # Installa Drupal (se non già installato)
-ddev drush site:install --account-name=admin --account-pass=admin
+ddev drush site:install --account-name=admin --account-pass=admin --db-url=mysql://db/db -y
+
+# Abilita i moduli necessari
+ddev drush en paragraphs -y
+ddev drush en aq_json -y
+ddev drush en aq_paragraphs -y
+
+# Abilita il tema AQ
+ddev drush theme:enable aq_theme -y
+ddev drush config:set system.theme default aq_theme -y
+
+# Clear cache
+ddev drush cr
 ```
 
 ### 3. Setup React
@@ -39,6 +48,64 @@ npm install
 
 # Avvia il server di sviluppo
 npm run dev
+```
+
+### Creazione Database da Zero
+
+
+```bash
+# Installa Drupal con database pulito
+ddev drush site:install --account-name=admin --account-pass=admin --db-url=mysql://db/db -y
+
+# Abilita i moduli necessari
+ddev drush en paragraphs -y
+ddev drush en aq_json -y
+ddev drush en aq_paragraphs -y
+
+# Abilita il tema AQ
+ddev drush theme:enable aq_theme -y
+ddev drush config:set system.theme default aq_theme -y
+
+# Clear cache
+ddev drush cr
+```
+
+### Verifica Database
+
+```bash
+# Controlla lo stato del database
+ddev drush status
+
+# Verifica i moduli installati
+ddev drush pm:list --status=enabled
+
+# Controlla l'endpoint API
+curl http://homework10.ddev.site/api/page-data
+```
+
+## 🔧 Configurazione API
+
+### Abilita il Modulo API
+
+```bash
+# Abilita il modulo aq_json
+ddev drush en aq_json -y
+
+# Clear cache
+ddev drush cr
+
+# Verifica l'endpoint
+curl http://homework10.ddev.site/api/page-data
+```
+
+### Test Endpoint API
+
+```bash
+# Test diretto dell'endpoint
+curl -H "Accept: application/json" http://homework10.ddev.site/api/page-data
+
+# Se non funziona, controlla i log
+ddev drush watchdog:show --type=php
 ```
 
 ## 🛠️ Comandi Utili
@@ -86,6 +153,8 @@ npm run lint
 dupral/
 ├── homework10/          # Drupal backend
 │   ├── web/            # Document root
+│   │   ├── modules/custom/  # Moduli custom
+│   │   └── themes/custom/   # Temi custom
 │   ├── vendor/         # Dipendenze Composer
 │   └── composer.json   # Configurazione Composer
 ├── react-app/          # React frontend
@@ -93,7 +162,7 @@ dupral/
 │   ├── components/     # Componenti React
 │   ├── services/       # Servizi API
 │   └── package.json    # Dipendenze npm
-└── web/                # Altri file Drupal
+└── README.md           # Documentazione
 ```
 
 ## 🔧 Configurazione
@@ -125,12 +194,33 @@ ddev composer install --no-dev
 
 ## 📝 Note
 
-- Il core di Drupal è incluso nel repository
+- Il progetto implementa una duplice versione del layout: Drupal (Twig/CSS) e React (TypeScript/CSS Modules)
 - I `node_modules` e `vendor` sono esclusi dal `.gitignore`
-- L'app React usa Next.js 15 con TypeScript
+- L'app React usa Next.js con TypeScript
 - Drupal usa il modulo `aq_json` per l'API JSON
+- Il tema AQ include funzionalità Light/Dark mode
 
 ## 🐛 Troubleshooting
+
+### Problemi Database
+```bash
+# Reset database
+ddev drush sql:drop
+ddev drush site:install --account-name=admin --account-pass=admin
+
+```
+
+### Problemi API
+```bash
+# Abilita modulo API
+ddev drush en aq_json -y
+
+# Clear cache
+ddev drush cr
+
+# Verifica endpoint
+curl http://homework10.ddev.site/api/page-data
+```
 
 ### Problemi Drupal
 ```bash

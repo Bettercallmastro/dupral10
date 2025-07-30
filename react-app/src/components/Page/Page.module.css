@@ -1,0 +1,23 @@
+/* Page Component Styles */
+.page {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Section Alternating Background */
+.page__section--alternate {
+  background-color: var(--color-card-bg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page {
+    padding-top: 0;
+  }
+}
+
+/* Focus states for accessibility */
+.page:focus {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+} 

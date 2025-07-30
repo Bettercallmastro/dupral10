@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Header Styles - AQ Theme
+   ========================================================================== */
+
+.header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+/* Logo */
+.header__logo {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.header__logo:hover {
+  color: var(--color-primary);
+}
+
+/* Navigation */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-lg);
+}
+
+.header__nav-item {
+  margin: 0;
+}
+
+.header__nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus {
+  color: var(--color-primary);
+  background-color: var(--color-card-bg);
+}
+
+/* Search Bar */
+.header__search {
+  position: relative;
+  margin: 0 var(--spacing-lg);
+}
+
+.header__search-input {
+  width: 300px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-left: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  transition: var(--transition);
+}
+
+.header__search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.header__search-icon {
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--color-secondary);
+}
+
+/* Contact Button */
+.header__contact {
+  margin-left: var(--spacing-lg);
+}
+
+.header__contact-btn {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.header__contact-btn:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Toggle */
+.header__menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .header__search-input {
+    width: 200px;
+  }
+  
+  .header__nav-list {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .header__nav,
+  .header__search,
+  .header__contact {
+    display: none;
+  }
+  
+  .header__menu-toggle {
+    display: block;
+  }
+  
+  .header__container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  /* Mobile Menu */
+  .header__nav--mobile {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header__nav--mobile .header__nav-list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .header__nav--mobile .header__nav-link {
+    display: block;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+  
+  .header__search--mobile {
+    margin: var(--spacing-md) 0;
+  }
+  
+  .header__search--mobile .header__search-input {
+    width: 100%;
+  }
+} 

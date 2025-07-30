@@ -1,0 +1,46 @@
+global-styles:
+  css:
+    theme:
+      css/global.css: {}
+  js:
+    js/global.js: {}
+
+header-styles:
+  css:
+    theme:
+      css/header.css: {}
+  js:
+    js/header.js: {}
+
+content-styles:
+  css:
+    theme:
+      css/content.css: {}
+  js:
+    js/content.js: {}
+
+footer-styles:
+  css:
+    theme:
+      css/footer.css: {}
+  js:
+    js/footer.js: {}
+
+slider:
+  css:
+    theme:
+      css/slider.css: {}
+  js:
+    js/slider.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+light-dark-toggle:
+  css:
+    theme:
+      css/light-dark.css: {}
+  js:
+    js/light-dark.js: {}
+  dependencies:
+    - core/drupal 

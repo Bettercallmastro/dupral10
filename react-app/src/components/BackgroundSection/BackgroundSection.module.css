@@ -1,0 +1,125 @@
+/* BackgroundSection Component Styles */
+.backgroundSection {
+  position: relative;
+  padding: 6rem 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.backgroundSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.backgroundSection__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.backgroundSection__content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.backgroundSection__label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.backgroundSection__heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.backgroundSection__body {
+  font-size: 1.25rem;
+  color: white;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.backgroundSection__bodySmall {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.backgroundSection__buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.backgroundSection__button {
+  min-width: 120px;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .backgroundSection {
+    padding: 4rem 0;
+    min-height: 400px;
+  }
+  
+  .backgroundSection__heading {
+    font-size: 2rem;
+  }
+  
+  .backgroundSection__body {
+    font-size: 1.125rem;
+  }
+  
+  .backgroundSection__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .backgroundSection__button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Animation */
+.backgroundSection {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} 

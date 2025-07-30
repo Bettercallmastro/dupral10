@@ -1,0 +1,21 @@
+name: 'AQ Theme'
+type: theme
+base theme: stable9
+description: 'Tema custom per il progetto AQ con supporto Light/Dark mode'
+core_version_requirement: ^10
+package: Custom
+
+# Regioni richieste nelle specifiche
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+
+# Librerie CSS e JS
+libraries:
+  - aq_theme/global-styles
+  - aq_theme/header-styles
+  - aq_theme/content-styles
+  - aq_theme/footer-styles
+  - aq_theme/slider
+  - aq_theme/light-dark-toggle 

@@ -1,0 +1,7 @@
+name: 'AQ Paragraphs'
+type: module
+description: 'Paragraphs Types per il progetto AQ'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - paragraphs:paragraphs 

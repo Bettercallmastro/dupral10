@@ -1,0 +1,85 @@
+/* Button Component Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-family: 'Inter', 'Roboto', 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+  min-width: 100px;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.button--primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: #000000;
+  border-color: #000000;
+}
+
+.button--secondary:hover {
+  background-color: var(--color-border);
+  transform: translateY(-1px);
+}
+
+.button--black {
+  background-color: #000000;
+  color: white;
+  border-color: #000000;
+}
+
+.button--black:hover {
+  background-color: #333333;
+  border-color: #333333;
+  transform: translateY(-1px);
+}
+
+.button--active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.button--active:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Focus states for accessibility */
+.button:focus {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+} 

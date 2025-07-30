@@ -1,0 +1,142 @@
+/* Slider Component Styles */
+.slider {
+  padding: 4rem 0;
+  background-color: var(--color-background);
+}
+
+.slider__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Top Section */
+.slider__topSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.slider__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+.slider__label {
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slider__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.slider__body {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.slider__bodySmall {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.slider__buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.slider__button {
+  min-width: 120px;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider {
+    padding: 2rem 0;
+  }
+  
+  .slider__topSection {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+  
+  .slider__content {
+    max-width: 100%;
+  }
+  
+  .slider__heading {
+    font-size: 2rem;
+  }
+  
+  .slider__body {
+    font-size: 1rem;
+  }
+  
+  .slider__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .slider__button {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .slider__navigation {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Animation */
+.slider {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

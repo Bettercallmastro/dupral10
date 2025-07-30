@@ -1,0 +1,5 @@
+name: 'AQ JSON'
+type: module
+description: 'Espone una rotta custom che restituisce un JSON di esempio per il frontend.'
+core_version_requirement: ^10
+package: Custom 

@@ -1,0 +1,7 @@
+aq_json.api:
+  path: '/api/aq-json'
+  defaults:
+    _controller: '\Drupal\aq_json\Controller\AqJsonController::getJson'
+    _title: 'AQ JSON API'
+  requirements:
+    _permission: 'access content' 

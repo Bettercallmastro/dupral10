@@ -1,0 +1,143 @@
+/* Section Component Styles */
+.section {
+  padding: 4rem 0;
+  background-color: var(--color-background);
+}
+
+.section--alternate {
+  background-color: var(--color-card-bg);
+}
+
+.section__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section__content {
+  order: 1;
+}
+
+.section__content--right {
+  order: 2;
+}
+
+.section__label {
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.section__subtitle {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section__description {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.section__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.section__button {
+  min-width: 120px;
+}
+
+.section__imageContainer {
+  order: 2;
+  position: relative;
+}
+
+.section__imageContainer--left {
+  order: 1;
+}
+
+.section__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section__image:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+  
+  .section__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .section__content,
+  .section__content--right {
+    order: 1;
+  }
+  
+  .section__imageContainer,
+  .section__imageContainer--left {
+    order: 2;
+  }
+  
+  .section__title {
+    font-size: 1.75rem;
+  }
+  
+  .section__subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .section__buttons {
+    flex-direction: column;
+  }
+  
+  .section__button {
+    width: 100%;
+  }
+}
+
+/* Animation */
+.section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

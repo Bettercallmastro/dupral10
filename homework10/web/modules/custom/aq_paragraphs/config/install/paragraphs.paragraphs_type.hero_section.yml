@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - aq_paragraphs
+id: hero_section
+label: 'Hero Section'
+icon_uuid: null
+description: 'Hero section with image, heading, and buttons'
+is_new: false 

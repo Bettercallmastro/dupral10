@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Theme override to display a hero section paragraph.
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <section class="hero-section">
+        <div class="container">
+          {% if content.field_label %}
+            <div class="hero-section__label">{{ content.field_label }}</div>
+          {% endif %}
+          
+          {% if content.field_heading %}
+            <h1 class="hero-section__heading">{{ content.field_heading }}</h1>
+          {% endif %}
+          
+          {% if content.field_subtitle %}
+            <p class="hero-section__subtitle">{{ content.field_subtitle }}</p>
+          {% endif %}
+          
+          {% if content.field_image %}
+            <div class="hero-section__image">
+              {{ content.field_image }}
+            </div>
+          {% endif %}
+          
+          {% if content.field_buttons %}
+            <div class="hero-section__buttons">
+              {{ content.field_buttons }}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endblock %}
+  </div>
+{% endblock paragraph %} 

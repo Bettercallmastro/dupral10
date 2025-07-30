@@ -1,6 +1,6 @@
 name: 'AQ Paragraphs'
 type: module
-description: 'Paragraphs Types per il progetto AQ'
+description: 'Custom paragraph types for AQ theme'
 core_version_requirement: ^10
 package: Custom
 dependencies:

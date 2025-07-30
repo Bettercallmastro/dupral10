@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override to display a text buttons section paragraph.
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <section class="text-buttons-section">
+        <div class="container">
+          {% if content.field_label %}
+            <div class="text-buttons-section__label">{{ content.field_label }}</div>
+          {% endif %}
+          
+          {% if content.field_heading %}
+            <h2 class="text-buttons-section__heading">{{ content.field_heading }}</h2>
+          {% endif %}
+          
+          {% if content.field_body %}
+            <div class="text-buttons-section__body">{{ content.field_body }}</div>
+          {% endif %}
+          
+          {% if content.field_body_small %}
+            <div class="text-buttons-section__body-small">{{ content.field_body_small }}</div>
+          {% endif %}
+          
+          {% if content.field_buttons %}
+            <div class="text-buttons-section__buttons">
+              {{ content.field_buttons }}
+            </div>
+          {% endif %}
+        </div>
+      </section>
+    {% endblock %}
+  </div>
+{% endblock paragraph %} 

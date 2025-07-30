@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - aq_paragraphs
+id: card_grid_section
+label: 'Card Grid Section'
+icon_uuid: null
+description: 'Grid of cards'
+is_new: false 

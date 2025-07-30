@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - aq_paragraphs
+id: text_buttons_section
+label: 'Text Buttons Section'
+icon_uuid: null
+description: 'Text section with buttons'
+is_new: false 

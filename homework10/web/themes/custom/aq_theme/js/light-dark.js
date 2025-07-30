@@ -1,53 +1,35 @@
-/**
- * Light/Dark Mode Toggle
- * AQ Theme
- */
-
-(function ($, Drupal) {
-  'use strict';
-
-  Drupal.behaviors.aqThemeLightDark = {
-    attach: function (context, settings) {
-      // Initialize theme mode
-      this.initThemeMode();
-      
-      // Add event listener for theme toggle
-      $(context).once('aq-theme-toggle').on('click', '#theme-toggle', function (e) {
-        e.preventDefault();
-        Drupal.behaviors.aqThemeLightDark.toggleTheme();
-      });
-    },
-
-    initThemeMode: function () {
-      // Get saved theme from localStorage or default to 'light'
-      const savedTheme = localStorage.getItem('aq-theme-mode') || 'light';
-      this.setTheme(savedTheme);
-    },
-
-    toggleTheme: function () {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      this.setTheme(newTheme);
-    },
-
-    setTheme: function (theme) {
-      // Set data attribute on html element
-      document.documentElement.setAttribute('data-theme', theme);
-      
-      // Save to localStorage
-      localStorage.setItem('aq-theme-mode', theme);
-      
-      // Update body class for backward compatibility
-      document.body.classList.remove('theme-mode--light', 'theme-mode--dark');
-      document.body.classList.add('theme-mode--' + theme);
-      
-      // Dispatch custom event for other scripts
-      const event = new CustomEvent('themeChanged', { detail: { theme: theme } });
-      document.dispatchEvent(event);
-      
-      // Log for debugging
-      console.log('Theme changed to:', theme);
+// Light/Dark Mode Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  
+  // Check for saved theme preference or default to light
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  body.setAttribute('data-theme', currentTheme);
+  
+  // Update toggle button state
+  updateToggleState(currentTheme);
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateToggleState(newTheme);
+  });
+  
+  function updateToggleState(theme) {
+    const lightIcon = themeToggle.querySelector('.theme-toggle__icon--light');
+    const darkIcon = themeToggle.querySelector('.theme-toggle__icon--dark');
+    
+    if (theme === 'dark') {
+      lightIcon.style.display = 'none';
+      darkIcon.style.display = 'block';
+    } else {
+      lightIcon.style.display = 'block';
+      darkIcon.style.display = 'none';
     }
-  };
-
-})(jQuery, Drupal); 
+  }
+}); 

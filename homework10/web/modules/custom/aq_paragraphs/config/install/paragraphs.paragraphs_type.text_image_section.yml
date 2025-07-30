@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - aq_paragraphs
+id: text_image_section
+label: 'Text Image Section'
+icon_uuid: null
+description: 'Text section with image'
+is_new: false 

@@ -1,0 +1,229 @@
+{#
+/**
+ * @file
+ * Theme override to display the front page.
+ */
+#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AQ Website</title>
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/global.css">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/header.css">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/content.css">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/footer.css">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/slider.css">
+  <link rel="stylesheet" href="{{ base_path ~ directory }}/css/light-dark.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Header Region -->
+    {% if page.header %}
+      <header class="header" role="banner">
+        <div class="header__container">
+          {{ page.header }}
+        </div>
+      </header>
+    {% else %}
+      <!-- Default Header Content -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <div class="header__logo">AQ</div>
+          <nav class="header__nav">
+            <ul class="header__menu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/portfolio">Portfolio</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="header__search">
+            <input type="text" placeholder="Cerca">
+          </div>
+          <button class="header__contact">Contattaci</button>
+        </div>
+      </header>
+    {% endif %}
+
+    <!-- Main Content Region -->
+    <main class="main" role="main">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-section__label">Welcome</div>
+          <h1 class="hero-section__heading">Build Amazing Websites</h1>
+          <p class="hero-section__subtitle">Create stunning web experiences with modern technologies</p>
+          <div class="hero-section__image">
+            <img src="https://picsum.photos/1200/600?random=1" alt="Hero Image">
+          </div>
+          <div class="hero-section__buttons">
+            <button class="btn btn--primary">Get Started</button>
+            <button class="btn btn--secondary">Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Text Buttons Section -->
+      <section class="text-buttons-section">
+        <div class="container">
+          <div class="text-buttons-section__label">Our Services</div>
+          <h2 class="text-buttons-section__heading">What We Do</h2>
+          <div class="text-buttons-section__body">
+            <p>We provide comprehensive web development services</p>
+          </div>
+          <div class="text-buttons-section__body-small">
+            <p>From design to deployment, we handle everything</p>
+          </div>
+          <div class="text-buttons-section__buttons">
+            <button class="btn btn--primary">View Services</button>
+            <button class="btn btn--secondary">Get Quote</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Text Image Section -->
+      <section class="text-image-section">
+        <div class="container">
+          <div class="text-image-section__content">
+            <div class="text-image-section__label">About Us</div>
+            <h2 class="text-image-section__heading">Your Digital Partner</h2>
+            <div class="text-image-section__body">
+              <p>We help businesses grow with innovative digital solutions</p>
+            </div>
+            <div class="text-image-section__body-small">
+              <p>Trusted by companies worldwide</p>
+            </div>
+            <div class="text-image-section__buttons">
+              <button class="btn btn--primary">Learn More</button>
+              <button class="btn btn--secondary">Contact Us</button>
+            </div>
+          </div>
+          <div class="text-image-section__image">
+            <img src="https://picsum.photos/600/400?random=2" alt="About Us">
+          </div>
+        </div>
+      </section>
+
+      <!-- Background Section -->
+      <section class="background-section">
+        <div class="container">
+          <div class="background-section__label">Our Work</div>
+          <h2 class="background-section__heading">Featured Projects</h2>
+          <div class="background-section__body">
+            <p>Discover our latest work and success stories</p>
+          </div>
+          <div class="background-section__body-small">
+            <p>Innovative solutions for modern businesses</p>
+          </div>
+          <div class="background-section__buttons">
+            <button class="btn btn--primary">View Portfolio</button>
+            <button class="btn btn--secondary">Case Studies</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card Grid Section -->
+      <section class="card-grid-section">
+        <div class="container">
+          <h2 class="card-grid-section__title">Our Services</h2>
+          <p class="card-grid-section__description">Discover what we can do for you</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card__image">
+                <img src="https://picsum.photos/400/300?random=4" alt="Web Development">
+              </div>
+              <div class="card__content">
+                <div class="card__badge">NEW</div>
+                <h3 class="card__heading">Web Development</h3>
+                <p class="card__subtitle">Custom websites and applications</p>
+                <p class="card__description">Modern, responsive web solutions</p>
+                <div class="card__buttons">
+                  <button class="btn btn--primary">Learn More</button>
+                  <button class="btn btn--secondary">Get Quote</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__image">
+                <img src="https://picsum.photos/400/300?random=5" alt="UI/UX Design">
+              </div>
+              <div class="card__content">
+                <div class="card__badge">POPULAR</div>
+                <h3 class="card__heading">UI/UX Design</h3>
+                <p class="card__subtitle">Beautiful user experiences</p>
+                <p class="card__description">Intuitive and engaging designs</p>
+                <div class="card__buttons">
+                  <button class="btn btn--primary">View Work</button>
+                  <button class="btn btn--secondary">Portfolio</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Region -->
+    {% if page.footer %}
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          {{ page.footer }}
+        </div>
+      </footer>
+    {% else %}
+      <!-- Default Footer Content -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__logo">AQ</div>
+          <div class="footer__description">Building the future of web development</div>
+          <div class="footer__menu">
+            <div class="footer__column">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/team">Team</a></li>
+                <li><a href="/careers">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer__column">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="/services/web">Web Development</a></li>
+                <li><a href="/services/design">Design</a></li>
+                <li><a href="/services/consulting">Consulting</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__copyright">© 2024 AQ Website. All rights reserved.</div>
+        </div>
+      </footer>
+    {% endif %}
+  </div>
+
+  <!-- Light/Dark mode toggle -->
+  <div class="theme-toggle">
+    <button class="theme-toggle__button" id="theme-toggle" aria-label="Toggle light/dark mode">
+      <svg class="theme-toggle__icon theme-toggle__icon--light" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--dark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+
+  <script src="{{ base_path ~ directory }}/js/light-dark.js"></script>
+</body>
+</html> 
